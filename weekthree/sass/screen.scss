@@ -1,0 +1,51 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+@import "compass";
+@import "normalize";
+
+// variables
+$text-color: #333;
+$primary-color: #c00;
+$primary-hover-color: #0c0;
+$secondary-color: #00c;
+
+//font-face($name, $font-files, [$eot], [$weight], [$style])
+@include font-face("noto_sansbold", font-files("notosans-bold-webfont.woff", "notosans-bold-webfont.ttf", "notosans-bold-webfont.svg"), "notosans-bold-webfont.eot");
+@include font-face("noto_regular", font-files("notosans-regular-webfont.woff", "notosans-regular-webfont.ttf", "notosans-regular-webfont.svg"), "notosans-regular-webfont.eot");
+
+*{
+    @include box-sizing(border-box);
+}
+
+body {
+    color: $text-color;
+    font-family: 'noto_regular';
+}
+
+a {
+  color: $primary-color;
+  font-family: "noto-sansbold";
+  opacity: 1;
+  display: block;
+  &:hover {
+    color: $primary-hover-color;
+    opacity: .5;
+  }
+  a.secondary {
+    color: $secondary-color;
+  }
+}
+
+// p {
+//   margin: 20px;
+// }
+
+div {
+  margin: 10px;
+  // h v blue spread color
+  // TODO: This crap
+  @include box-shadow(4px 4px 4px 2px #ccc);
+}
