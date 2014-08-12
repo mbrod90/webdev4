@@ -1,0 +1,53 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+// @import "compass/reset";
+@import "breakpoint";
+@import "partials/breakpoints";
+@import "partials/base_mixins";
+@import "partials/decorators";
+
+body {
+  @include font-size(13px);
+  margin: 0 auto;
+  text-align: center;
+  background: #ccc;
+  @include breakpoint($bp-tablet-portrait) {
+    text-align: left;
+    @include linear-gradient(#333, #fff);
+  }
+
+  strong {
+    @include ribbon(yellowgreen);
+  }
+
+
+
+figure {
+  display: block;
+  width: 280px;
+  height: 280px;
+  margin: 20px auto;
+  @include breakpoint($bp-mobile-landscape) {
+    width: 440px;
+    height: 300px;
+  }
+  @include breakpoint($bp-tablet-portrait) {
+    margin: 0;
+    display: inline-block;
+    width: 250px;
+    height: 250px;
+
+  }
+  background-image: url('http://baconmockup.com/300/300');
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  }
+}
+
+section {
+  @extend %clearfix;
+}

@@ -1,0 +1,52 @@
+/* primary CTA ribbon */
+@mixin ribbon($arrow-color: #c00, $font-color: #fff) {
+  display: block;
+  position: relative;
+  z-index: 0;
+  a {
+    display: inline-block;
+    color: #202020;
+    background-color: $arrow-color;
+    position: relative;
+    text-align: center;
+    padding: 11px 5px;
+    font-size: 18px;
+    line-height: 18px;
+    &:before {
+      left: -31px;
+      border: 20px solid $arrow-color;
+      border-left-color: transparent;
+    }
+    &:before,
+    &:after {
+      content: '';
+      position: absolute;
+      display: block;
+      bottom: 0;
+      z-index: -1;
+    }
+    &:after {
+      right: -20px;
+      border-left-width: 20px;
+      border-right-color: transparent;
+      width: 0;
+      height: 0;
+      border-top: 20px solid transparent;
+      border-bottom: 20px solid transparent;
+      border-left: 20px solid $arrow-color;
+    }
+  }
+}
+
+//alerts styles
+$alerts: (error, red, 1px),
+         (success, green, 2px),
+         (info, blue, 2px);
+
+@each $type, $color, $border-width in $alerts {
+  .alert--#{$type} {
+    border: $border-width solid $color;
+    padding: 10px;
+    margin: 10px;
+  }
+}

@@ -1,0 +1,136 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+/* line 22, ../sass/partials/_base_mixins.scss */
+section {
+  *zoom: 1;
+}
+/* line 24, ../sass/partials/_base_mixins.scss */
+section:before, section:after {
+  content: " ";
+  display: table;
+}
+/* line 28, ../sass/partials/_base_mixins.scss */
+section:after {
+  clear: both;
+}
+
+/* primary CTA ribbon */
+/* line 47, ../sass/partials/_decorators.scss */
+.alert--error {
+  border: 1px solid red;
+  padding: 10px;
+  margin: 10px;
+}
+
+/* line 47, ../sass/partials/_decorators.scss */
+.alert--success {
+  border: 2px solid green;
+  padding: 10px;
+  margin: 10px;
+}
+
+/* line 47, ../sass/partials/_decorators.scss */
+.alert--info {
+  border: 2px solid blue;
+  padding: 10px;
+  margin: 10px;
+}
+
+/* line 12, ../sass/screen.scss */
+body {
+  font-size: 13px;
+  font-size: 0.8125rem;
+  margin: 0 auto;
+  text-align: center;
+  background: #ccc;
+}
+@media (min-width: 768px) {
+  /* line 12, ../sass/screen.scss */
+  body {
+    text-align: left;
+    background-color: white;
+    /* Fallback Color */
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#333333), to(white));
+    /* Saf4+, Chrome */
+    background-image: -webkit-linear-gradient(top, #333333, white);
+    /* Chrome 10+, Saf5.1+, iOS 5+ */
+    background-image: -moz-linear-gradient(top, #333333, white);
+    /* FF3.6 */
+    background-image: -ms-linear-gradient(top, #333333, white);
+    /* IE10 */
+    background-image: -o-linear-gradient(top, #333333, white);
+    /* Opera 11.10+ */
+    background-image: linear-gradient(top, #333333, white);
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#333333', EndColorStr='white');
+  }
+}
+/* line 22, ../sass/screen.scss */
+body strong {
+  display: block;
+  position: relative;
+  z-index: 0;
+}
+/* line 6, ../sass/partials/_decorators.scss */
+body strong a {
+  display: inline-block;
+  color: #202020;
+  background-color: yellowgreen;
+  position: relative;
+  text-align: center;
+  padding: 11px 5px;
+  font-size: 18px;
+  line-height: 18px;
+}
+/* line 15, ../sass/partials/_decorators.scss */
+body strong a:before {
+  left: -31px;
+  border: 20px solid yellowgreen;
+  border-left-color: transparent;
+}
+/* line 20, ../sass/partials/_decorators.scss */
+body strong a:before, body strong a:after {
+  content: '';
+  position: absolute;
+  display: block;
+  bottom: 0;
+  z-index: -1;
+}
+/* line 28, ../sass/partials/_decorators.scss */
+body strong a:after {
+  right: -20px;
+  border-left-width: 20px;
+  border-right-color: transparent;
+  width: 0;
+  height: 0;
+  border-top: 20px solid transparent;
+  border-bottom: 20px solid transparent;
+  border-left: 20px solid yellowgreen;
+}
+/* line 28, ../sass/screen.scss */
+body figure {
+  display: block;
+  width: 280px;
+  height: 280px;
+  margin: 20px auto;
+  background-image: url("http://baconmockup.com/300/300");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+@media (min-width: 480px) {
+  /* line 28, ../sass/screen.scss */
+  body figure {
+    width: 440px;
+    height: 300px;
+  }
+}
+@media (min-width: 768px) {
+  /* line 28, ../sass/screen.scss */
+  body figure {
+    margin: 0;
+    display: inline-block;
+    width: 250px;
+    height: 250px;
+  }
+}

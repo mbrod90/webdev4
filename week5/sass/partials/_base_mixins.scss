@@ -1,0 +1,57 @@
+// rem font sizes
+@function calculateRem($size) {
+ $remSize: $size / 16px; // will be overriden if browser supports rem
+ @return $remSize * 1rem;
+}
+
+@mixin font-size($size) {
+ font-size: $size;
+ font-size: calculateRem($size);
+}
+
+
+//cross browser opacity
+@mixin opacity($opacity) {
+ opacity: $opacity;
+ $opacity-ie: $opacity * 100;
+ filter: alpha(opacity=$opacity-ie); //IE8
+}
+
+
+// the % makes it a silent extend, i.e. it doesn't need to be output until it is called.
+%clearfix {
+ *zoom: 1;
+ &:before, &:after {
+   content: " ";
+   display: table;
+ }
+ &:after {
+   clear: both;
+ }
+}
+
+//visually hide elements while still making them accessible to screen readers
+%visuallyhidden {
+ margin: -1px;
+ padding: 0;
+ width: 1px;
+ height: 1px;
+ overflow: hidden;
+ clip: rect(0 0 0 0);
+ clip: rect(0, 0, 0, 0);
+ position: absolute;
+}
+
+
+// Basic linear gradient to move from one solid color to another
+@mixin linear-gradient($fromColor, $toColor) {
+  background-color: $toColor; /* Fallback Color */
+  background-image: -webkit-gradient(linear, left top, left bottom, from($fromColor), to($toColor)); /* Saf4+, Chrome */
+  background-image: -webkit-linear-gradient(top, $fromColor, $toColor); /* Chrome 10+, Saf5.1+, iOS 5+ */
+  background-image:    -moz-linear-gradient(top, $fromColor, $toColor); /* FF3.6 */
+  background-image:     -ms-linear-gradient(top, $fromColor, $toColor); /* IE10 */
+  background-image:      -o-linear-gradient(top, $fromColor, $toColor); /* Opera 11.10+ */
+  background-image:         linear-gradient(top, $fromColor, $toColor);
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#{$fromColor}', EndColorStr='#{$toColor}');
+}
+
