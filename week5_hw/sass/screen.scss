@@ -1,7 +1,11 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
 
-/*=====================================
-  CLEARING
-=====================================*/
+@import "compass/reset";
+
+// CLEARING
 
 * {
   -webkit-box-sizing: border-box;
@@ -21,41 +25,57 @@ html, body {
   max-width: 960px;
   margin: 0 auto;
   padding: 0;
+  &:after {
+    content: "";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+  }
 }
 
-.container:after {
-  content: "";
-  display: block;
-  height: 0;
-  clear: both;
-  visibility: hidden;
+.clearfix {
+  &:before, &:after {
+    content: "";
+    display: table;
+    overflow: hidden;
+    visibility: hidden;
+    width: 0;
+    height: 0;
+  }
 }
 
-.clearfix:before,
-.clearfix:after,
-.row:before,
-.row:after {
-  content: "";
-  display: table;
-  overflow: hidden;
-  visibility: hidden;
-  width: 0;
-  height: 0;
+.row {
+  &:before {
+    content: "";
+    display: table;
+    overflow: hidden;
+    visibility: hidden;
+    width: 0;
+    height: 0;
+  }
+  &:after {
+    content: "";
+    display: table;
+    overflow: hidden;
+    visibility: hidden;
+    width: 0;
+    height: 0;
+    clear: both;
+  }
 }
 
-.row:after,
 .clearfix:after {
   clear: both;
 }
 
-.row,
-.clearfix {
+.row, .clearfix {
   zoom: 1;
 }
 
-/*=====================================
-  content
-=====================================*/
+
+// CONTENT
+
 
 section {
   min-height: 100vh;
@@ -100,17 +120,16 @@ nav {
   position: fixed;
   width: 100%;
   height: 70px;
-  background-color: rgba(255,255,255, 0.6);
+  background-color: rgba(255, 255, 255, 0.6);
 }
 
 ul li {
   display: inline;
   padding: 20px;
-}
-
-ul li a {
-  position: relative;
-  top: 20px;
-  color: #000;
-  text-decoration: none;
+  a {
+    position: relative;
+    top: 20px;
+    color: #000;
+    text-decoration: none;
+  }
 }
