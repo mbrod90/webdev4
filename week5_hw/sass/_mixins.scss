@@ -1,0 +1,5 @@
+@mixin fullscreen-background {
+  $background-size: cover;
+  -webkit-background-size: $background-size;
+  -o-background-size: $background-size;
+}

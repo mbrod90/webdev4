@@ -4,80 +4,25 @@
  * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
 
 @import "compass/reset";
-
-$typekit-font: "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Tahoma, sans-serif;
-$typekit-color: blue;
+@import "clearing";
+@import "variables";
+@import "mixins";
 
 // CLEARING
 html, body {
   width: 100%;
   height: 100%;
-  font-family: $typekit-font;
-  color: $typekit-color;
+  font-family: $primary-font;
+  color: $primary-color;
   text-align: center;
 }
-
-.container {
-  position: relative;
-  width: 100%;
-  max-width: 960px;
-  margin: 0 auto;
-  padding: 0;
-  &:after {
-    content: "";
-    display: block;
-    height: 0;
-    clear: both;
-    visibility: hidden;
-  }
-}
-
-.clearfix {
-  &:before, &:after {
-    content: "";
-    display: table;
-    overflow: hidden;
-    visibility: hidden;
-    width: 0;
-    height: 0;
-  }
-}
-
-.row {
-  &:before {
-    content: "";
-    display: table;
-    overflow: hidden;
-    visibility: hidden;
-    width: 0;
-    height: 0;
-  }
-  &:after {
-    content: "";
-    display: table;
-    overflow: hidden;
-    visibility: hidden;
-    width: 0;
-    height: 0;
-    clear: both;
-  }
-}
-
-.clearfix:after {
-  clear: both;
-}
-
-.row, .clearfix {
-  zoom: 1;
-}
-
 
 // CONTENT
 section {
   width: 100%;
   height: 100%;
   h2 {
-    position: absolute;
+    position: relative;
     margin: 30% 10%;
     font-size: 6em;
   }
@@ -89,14 +34,12 @@ section {
 .tv4 { background: url('../imgs/img4.jpg') no-repeat top center fixed; }
 
 .bg {
--webkit-background-size: cover;
--moz-background-size: cover;
--o-background-size: cover;
-background-size: cover;
+  @include fullscreen-background;
 }
 
 nav {
-  text-align: center;
+  text-align: right;
+  margin-right: 20px;
   position: fixed;
   z-index: 2;
   width: 100%;
@@ -105,9 +48,11 @@ nav {
     ul li {
       display: inline;
       padding: 20px;
+      position: relative;
+      top: 20px;
       a {
         font-size: 1.5em;
-        color: $typekit-color;
+        color: $primary-color;
         text-decoration: none;
     }
   }
@@ -118,22 +63,24 @@ nav {
     font-size: 2.5em;
   }
   nav {
+    text-align: center;
     position: static;
     height: 180px;
     top: 0;
-    li a {
+    ul li {
+      position: static;
+      a {
       display: block;
     }
   }
+}
 
-  .tv1, .tv2, .tv3, .tv4 {
+  .bg {
     min-width: 480px;
     min-height: 480px;
     width: 100%;
     height: auto;
-    -webkit-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
     background-attachment: scroll;
+    @include fullscreen-background;
   }
 }

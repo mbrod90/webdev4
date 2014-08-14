@@ -67,16 +67,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   display: block;
 }
 
-/* line 12, ../sass/screen.scss */
-html, body {
-  width: 100%;
-  height: 100%;
-  font-family: "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Tahoma, sans-serif;
-  color: blue;
-  text-align: center;
-}
-
-/* line 20, ../sass/screen.scss */
+/* line 1, ../sass/_clearing.scss */
 .container {
   position: relative;
   width: 100%;
@@ -84,7 +75,7 @@ html, body {
   margin: 0 auto;
   padding: 0;
 }
-/* line 26, ../sass/screen.scss */
+/* line 7, ../sass/_clearing.scss */
 .container:after {
   content: "";
   display: block;
@@ -93,7 +84,7 @@ html, body {
   visibility: hidden;
 }
 
-/* line 36, ../sass/screen.scss */
+/* line 17, ../sass/_clearing.scss */
 .clearfix:before, .clearfix:after {
   content: "";
   display: table;
@@ -103,7 +94,7 @@ html, body {
   height: 0;
 }
 
-/* line 47, ../sass/screen.scss */
+/* line 28, ../sass/_clearing.scss */
 .row:before {
   content: "";
   display: table;
@@ -112,7 +103,7 @@ html, body {
   width: 0;
   height: 0;
 }
-/* line 55, ../sass/screen.scss */
+/* line 36, ../sass/_clearing.scss */
 .row:after {
   content: "";
   display: table;
@@ -123,71 +114,81 @@ html, body {
   clear: both;
 }
 
-/* line 66, ../sass/screen.scss */
+/* line 47, ../sass/_clearing.scss */
 .clearfix:after {
   clear: both;
 }
 
-/* line 70, ../sass/screen.scss */
+/* line 51, ../sass/_clearing.scss */
 .row, .clearfix {
   zoom: 1;
 }
 
-/* line 76, ../sass/screen.scss */
+/* line 12, ../sass/screen.scss */
+html, body {
+  width: 100%;
+  height: 100%;
+  font-family: "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Tahoma, sans-serif;
+  color: blue;
+  text-align: center;
+}
+
+/* line 21, ../sass/screen.scss */
 section {
   width: 100%;
   height: 100%;
 }
-/* line 79, ../sass/screen.scss */
+/* line 24, ../sass/screen.scss */
 section h2 {
-  position: absolute;
+  position: relative;
   margin: 30% 10%;
   font-size: 6em;
 }
 
-/* line 86, ../sass/screen.scss */
+/* line 31, ../sass/screen.scss */
 .tv1 {
   background: url("../imgs/img1.jpg") no-repeat top center fixed;
 }
 
-/* line 87, ../sass/screen.scss */
+/* line 32, ../sass/screen.scss */
 .tv2 {
   background: url("../imgs/img2.jpg") no-repeat top center fixed;
 }
 
-/* line 88, ../sass/screen.scss */
+/* line 33, ../sass/screen.scss */
 .tv3 {
   background: url("../imgs/img3.jpg") no-repeat top center fixed;
 }
 
-/* line 89, ../sass/screen.scss */
+/* line 34, ../sass/screen.scss */
 .tv4 {
   background: url("../imgs/img4.jpg") no-repeat top center fixed;
 }
 
-/* line 91, ../sass/screen.scss */
+/* line 36, ../sass/screen.scss */
 .bg {
   -webkit-background-size: cover;
-  -moz-background-size: cover;
   -o-background-size: cover;
-  background-size: cover;
 }
 
-/* line 98, ../sass/screen.scss */
+/* line 40, ../sass/screen.scss */
 nav {
-  text-align: center;
+  text-align: right;
+  margin-right: 20px;
   position: fixed;
   z-index: 2;
   width: 100%;
   height: 70px;
   background-color: rgba(255, 255, 255, 0.8);
 }
-/* line 105, ../sass/screen.scss */
+/* line 48, ../sass/screen.scss */
 nav ul li {
   display: inline;
   padding: 20px;
+  position: relative;
+  top: 20px;
 }
-/* line 108, ../sass/screen.scss */
+/* line 53, ../sass/screen.scss */
 nav ul li a {
   font-size: 1.5em;
   color: blue;
@@ -195,31 +196,35 @@ nav ul li a {
 }
 
 @media screen and (max-width: 780px) {
-  /* line 117, ../sass/screen.scss */
+  /* line 62, ../sass/screen.scss */
   section h2 {
     font-size: 2.5em;
   }
 
-  /* line 120, ../sass/screen.scss */
+  /* line 65, ../sass/screen.scss */
   nav {
+    text-align: center;
     position: static;
     height: 180px;
     top: 0;
   }
-  /* line 124, ../sass/screen.scss */
-  nav li a {
+  /* line 70, ../sass/screen.scss */
+  nav ul li {
+    position: static;
+  }
+  /* line 72, ../sass/screen.scss */
+  nav ul li a {
     display: block;
   }
 
-  /* line 129, ../sass/screen.scss */
-  .tv1, .tv2, .tv3, .tv4 {
+  /* line 78, ../sass/screen.scss */
+  .bg {
     min-width: 480px;
     min-height: 480px;
     width: 100%;
     height: auto;
+    background-attachment: scroll;
     -webkit-background-size: cover;
     -o-background-size: cover;
-    background-size: cover;
-    background-attachment: scroll;
   }
 }
