@@ -5,18 +5,16 @@
 
 @import "compass/reset";
 
+$typekit-font: "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Tahoma, sans-serif;
+$typekit-color: blue;
+
 // CLEARING
-
-* {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
 html, body {
   width: 100%;
   height: 100%;
-  font-family: "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Tahoma, sans-serif;
+  font-family: $typekit-font;
+  color: $typekit-color;
+  text-align: center;
 }
 
 .container {
@@ -75,61 +73,67 @@ html, body {
 
 
 // CONTENT
-
-
 section {
-  min-height: 100vh;
-  min-width: 1024vw;
-  width: auto;
-  height: auto;
+  width: 100%;
+  height: 100%;
+  h2 {
+    position: absolute;
+    margin: 30% 10%;
+    font-size: 6em;
+  }
 }
 
-.tv1 {
-  background: url('../imgs/img1.jpg') no-repeat top center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-}
+.tv1 { background: url('../imgs/img1.jpg') no-repeat top center fixed; }
+.tv2 { background: url('../imgs/img2.jpg') no-repeat top center fixed; }
+.tv3 { background: url('../imgs/img3.jpg') no-repeat top center fixed; }
+.tv4 { background: url('../imgs/img4.jpg') no-repeat top center fixed; }
 
-.tv2 {
-  background: url('../imgs/img2.jpg') no-repeat top center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-}
-
-.tv3 {
-  background: url('../imgs/img3.jpg') no-repeat top center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-}
-
-.tv4 {
-  background: url('../imgs/img4.jpg') no-repeat top center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+.bg {
+-webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover;
+background-size: cover;
 }
 
 nav {
+  text-align: center;
   position: fixed;
+  z-index: 2;
   width: 100%;
   height: 70px;
-  background-color: rgba(255, 255, 255, 0.6);
+  background-color: rgba(255, 255, 255, 0.8);
+    ul li {
+      display: inline;
+      padding: 20px;
+      a {
+        font-size: 1.5em;
+        color: $typekit-color;
+        text-decoration: none;
+    }
+  }
 }
 
-ul li {
-  display: inline;
-  padding: 20px;
-  a {
-    position: relative;
-    top: 20px;
-    color: #000;
-    text-decoration: none;
+@media screen and (max-width:780px) {
+  section h2 {
+    font-size: 2.5em;
+  }
+  nav {
+    position: static;
+    height: 180px;
+    top: 0;
+    li a {
+      display: block;
+    }
+  }
+
+  .tv1, .tv2, .tv3, .tv4 {
+    min-width: 480px;
+    min-height: 480px;
+    width: 100%;
+    height: auto;
+    -webkit-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-attachment: scroll;
   }
 }
