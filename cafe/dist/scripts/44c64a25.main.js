@@ -1,0 +1,1 @@
+function initialize(){{var a=document.getElementById("map_canvas"),b={center:new google.maps.LatLng(33.862158,-84.287887),zoom:8,mapTypeId:google.maps.MapTypeId.ROADMAP};new google.maps.Map(a,b)}}console.log("'Allo 'Allo!"),google.maps.event.addDomListener(window,"load",initialize);
